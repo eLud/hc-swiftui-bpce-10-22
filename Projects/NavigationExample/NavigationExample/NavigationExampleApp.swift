@@ -9,10 +9,37 @@ import SwiftUI
 
 @main
 struct NavigationExampleApp: App {
+
+    @State private var tabSelected = "List"
+
     var body: some Scene {
         WindowGroup {
-            NavigationView {
-                ContentView()
+            TabView(selection: $tabSelected) {
+                NavigationView {
+                    VStack {
+                        Button("Nav") {
+                            tabSelected = "Sun"
+                        }
+                        ContentView()
+                    }
+                }
+                .tabItem {
+                    Text("List")
+                    Image(systemName: "list.bullet")
+                }
+                .tag("List")
+                ImageView(imageName: "sun.min.fill")
+                    .tabItem {
+                        Text("Sun")
+                        Image(systemName: "sun.min")
+                    }
+                    .tag("Sun")
+                ImageView(imageName: "cloud")
+                    .tabItem {
+                        Image(systemName: "cloud")
+                        Text("Cloud")
+                    }
+                    .tag("Cloud")
             }
         }
     }
