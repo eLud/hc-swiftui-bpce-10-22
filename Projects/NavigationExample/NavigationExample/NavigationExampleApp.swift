@@ -40,6 +40,11 @@ struct NavigationExampleApp: App {
                         Text("Cloud")
                     }
                     .tag("Cloud")
+                Navigator()
+                    .tabItem {
+                        Image(systemName: "globe")
+                        Text("Web")
+                    }
             }
         }
     }

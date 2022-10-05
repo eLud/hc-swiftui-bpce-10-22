@@ -21,7 +21,6 @@ struct ImageView: View {
             }
             .alert(item: $alertMessage) { message in
                 Alert(title: Text(message.message))
-                
             }
     }
 }

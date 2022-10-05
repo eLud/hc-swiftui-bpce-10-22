@@ -12,6 +12,8 @@ struct ContentView: View {
     @State private var imageName: String?
     @State private var searchTerms: String = ""
 
+    @Environment(\.dismiss) var mode
+
     var images = ["moon", "sun", "cloud"]
 
     var body: some View {
